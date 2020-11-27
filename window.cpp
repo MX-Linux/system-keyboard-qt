@@ -9,6 +9,7 @@
 #include "translation.h"
 #include <QProcess>
 #include <QEventLoop>
+#include <QMessageBox>
 
 Window::Window(QWidget *parent) :
     QWidget(parent),
@@ -73,8 +74,7 @@ Window::Window(QWidget *parent) :
         }
         else if(role == QDialogButtonBox::ButtonRole::AcceptRole)
         {
-            apply();
-            close();
+            if(apply()) close();
         }
         else if(role == QDialogButtonBox::ButtonRole::RejectRole)
         {
@@ -130,7 +130,7 @@ QString Window::generateOutput()
     return result;
 }
 
-void Window::apply()
+bool Window::apply()
 {
     // generateOutput() is not used to create file content incase there is some options the program doesn't support
     // so it just is used for debugging
@@ -140,9 +140,9 @@ void Window::apply()
         QFile io{KeyboardDefaultFile};
         if(!io.open(QFile::ReadOnly))
         {
-            // TODO: Error Handling
             qDebug() << "Failed to open file read-only:" << KeyboardDefaultFile;
-            return;
+            QMessageBox::critical(this, tr("Error"), tr("Failed to open file: ") + KeyboardDefaultFile, QMessageBox::Close);
+            return false;
         }
         QTextStream stream{&io};
         content = stream.readAll();
@@ -158,9 +158,9 @@ void Window::apply()
         QFile io{KeyboardDefaultFile};
         if(!io.open(QFile::WriteOnly))
         {
-            // TODO: Error handling
             qDebug() << "Failed to open file write-only:" << KeyboardDefaultFile;
-            return;
+            QMessageBox::critical(this, tr("Error"), tr("Failed to open file: ") + KeyboardDefaultFile, QMessageBox::Close);
+            return false;
         }
         QTextStream stream{&io};
         stream << parser.source();
@@ -168,19 +168,22 @@ void Window::apply()
     }
     QEventLoop loop;
     QProcess proc;
-    proc.start("setxkbmap", QStringList()
+    auto command = QString("setxkbmap");
+    auto commandOptions = QStringList()
                << "-model" << getModel()
                << "-layout" << getLayoutsAndVariants().first
                << "-variant" << getLayoutsAndVariants().second
-               << "-options" << getOptions());
+               << "-options" << getOptions();
+    proc.start("setxkbmap", commandOptions);
     loop.exec();
     QObject::disconnect(&proc, nullptr, nullptr, nullptr);
     if(proc.exitCode() != 0)
     {
-        // TODO error: handling
-        return;
+        QMessageBox::critical(this, tr("Error"), tr("Command exited with code non-zero: ") + (QStringList() << command << commandOptions).join(' '), QMessageBox::Close);
+        return false;
     }
     proc.close();
+    return true;
 }
 
 void Window::loadDefaults()
@@ -188,7 +191,7 @@ void Window::loadDefaults()
     QFile io{KeyboardDefaultFile};
     if(!io.open(QFile::ReadOnly))
     {
-        // ERROR
+        QMessageBox::critical(this, tr("Error"), tr("Failed to open file: ") + KeyboardDefaultFile + "\n" + tr("Most settings will not be loaded"), QMessageBox::Close);
         return;
     }
     QTextStream stream{&io};

@@ -45,9 +45,9 @@ public:
 private slots:
     void refreshLayoutButtonStates();
     QString generateOutput();
-    void apply();
     void loadDefaults();
 private:
+    bool apply();
 
     QString getModel();
     QPair<QStringList, QStringList> getLayoutsAndVariants();
