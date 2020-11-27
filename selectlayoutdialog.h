@@ -3,10 +3,16 @@
 
 #include <QDialog>
 #include "keyboardlayouts.h"
+#include "translation.h"
 
 namespace Ui {
 class SelectLayoutDialog;
 }
+
+enum UserRoles
+{
+    NameRole = Qt::UserRole
+};
 
 class SelectLayoutDialog : public QDialog
 {

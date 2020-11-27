@@ -203,4 +203,15 @@ void KeyboardInfo::readOption(QXmlStreamReader &reader, KeyboardOptionGroup &par
     parent.options.append(item);
 }
 
+QIcon KeyboardInfo::layoutIcon(QString layoutName)
+{
+    QString path = QDir::cleanPath(LayoutFlagIcons + QDir::separator() + layoutName + ".png");
+    QFileInfo fileInfo{path};
+    if(fileInfo.isFile())
+        return QIcon{path};
+    else
+        return QIcon{};
+}
+
+
 

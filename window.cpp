@@ -6,7 +6,6 @@
 #include <QTextStream>
 #include "selectlayoutdialog.h"
 #include "posixconfigparser.h"
-#include "translation.h"
 #include <QProcess>
 #include <QEventLoop>
 #include <QMessageBox>
@@ -20,7 +19,7 @@ Window::Window(QWidget *parent) :
     ui->listWidget_KeyboardLayouts->setSelectionMode(QListWidget::SingleSelection);
     for(auto model : m_keyboardInfo.models())
     {
-        ui->comboBox_KeyboardModel->addItem(model.description);
+        ui->comboBox_KeyboardModel->addItem(keyboardtr(model.description));
         int index = ui->comboBox_KeyboardModel->count() - 1;
         ui->comboBox_KeyboardModel->setItemData(index, {model.name}, OptionName);
     }
@@ -298,7 +297,7 @@ void Window::populateLayout(QLayout *layout, QStringList options)
         {
             if(option.config.name == allowed)
             {
-                QGroupBox* box = new QGroupBox{option.config.description};
+                QGroupBox* box = new QGroupBox{keyboardtr(option.config.description)};
                 QComboBox* comboBox = new QComboBox;
                 box->setLayout(new QVBoxLayout);
                 box->layout()->addWidget(comboBox);

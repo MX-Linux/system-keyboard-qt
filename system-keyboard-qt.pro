@@ -29,7 +29,8 @@ SOURCES += \
         window.cpp \
     keyboardlayouts.cpp \
     selectlayoutdialog.cpp \
-    posixconfigparser.cpp
+    posixconfigparser.cpp \
+    translation.cpp
 
 HEADERS += \
         window.h \

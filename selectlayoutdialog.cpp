@@ -10,7 +10,10 @@ SelectLayoutDialog::SelectLayoutDialog(const KeyboardInfo &info, QWidget *parent
     ui->setupUi(this);
     for(auto layout : m_info.layouts())
     {
-        ui->comboBox_SelectedLayout->addItem(layout.config.description);
+        ui->comboBox_SelectedLayout->addItem(keyboardtr(layout.config.description));
+        int index = ui->comboBox_SelectedLayout->count() - 1;
+        ui->comboBox_SelectedLayout->setItemIcon(index, m_info.layoutIcon(layout.config.name));
+        ui->comboBox_SelectedLayout->setItemData(index, layout.config.name, NameRole);
     }
     refreshSelectedVariants();
 
@@ -28,11 +31,11 @@ QPair<KeyboardConfigItem, KeyboardConfigItem> SelectLayoutDialog::selectedLayout
 {
     for(auto layout : m_info.layouts())
     {
-        if(layout.config.description == ui->comboBox_SelectedLayout->currentText())
+        if(layout.config.name == ui->comboBox_SelectedLayout->currentData(NameRole))
         {
             for(auto variant : layout.variants)
             {
-                if(variant.description == ui->comboBox_SelectedVariant->currentText())
+                if(variant.name == ui->comboBox_SelectedVariant->currentData(NameRole))
                 {
                     return {layout.config, variant};
                 }
@@ -51,9 +54,12 @@ void SelectLayoutDialog::refreshSelectedVariants()
         {
             ui->comboBox_SelectedVariant->clear();
             ui->comboBox_SelectedVariant->addItem(tr("No Variant"));
+            ui->comboBox_SelectedVariant->setItemData(0, "No Variant", NameRole);
             for(auto variant : layout.variants)
             {
-                ui->comboBox_SelectedVariant->addItem(variant.description);
+                ui->comboBox_SelectedVariant->addItem(keyboardtr(variant.description));
+                int index = ui->comboBox_SelectedVariant->count() - 1;
+                ui->comboBox_SelectedVariant->setItemData(index, variant.name, NameRole);
             }
             break;
         }

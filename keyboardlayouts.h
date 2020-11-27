@@ -5,6 +5,8 @@
 #include <QXmlStreamReader>
 #include <QDir>
 #include <QDebug>
+#include <QIcon>
+#include <QFileInfo>
 
 struct KeyboardModel
 {
@@ -38,11 +40,13 @@ class KeyboardInfo
 {
 public:
     const QString XkbDataDirectory = "/usr/share/X11/xkb/rules";
+    const QString LayoutFlagIcons = "/usr/share/flags-common";
     KeyboardInfo();
     KeyboardInfo(const KeyboardInfo& other);
     QList<KeyboardModel> models() const { return m_models; }
     QList<KeyboardLayout> layouts() const { return m_layouts; }
     QList<KeyboardOptionGroup> options() const { return m_optionGroups; }
+    QIcon layoutIcon(QString layoutName);
 private:
     void reparse();
     void readDocument(QXmlStreamReader& reader);

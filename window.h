@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QListWidgetItem>
+#include "translation.h"
 #include "keyboardlayouts.h"
 
 namespace Ui {
@@ -28,7 +29,7 @@ public:
     KeyboardLayoutListWidgetItem(KeyboardConfigItem layout, KeyboardConfigItem variant)
         : m_layout(layout), m_variant(variant)
     {
-        setText(m_layout.name + " " + m_layout.description + " " + variant.description);
+        setText(keyboardtr(m_layout.name) + " " + keyboardtr(m_layout.description) + " " + keyboardtr(variant.description));
     }
     virtual ~KeyboardLayoutListWidgetItem();
     KeyboardConfigItem m_layout;
