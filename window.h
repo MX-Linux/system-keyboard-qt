@@ -26,10 +26,11 @@ const QString KeyboardDefaultFile = "/etc/default/keyboard";
 class KeyboardLayoutListWidgetItem : public QListWidgetItem
 {
 public:
-    KeyboardLayoutListWidgetItem(KeyboardConfigItem layout, KeyboardConfigItem variant)
+    KeyboardLayoutListWidgetItem(KeyboardConfigItem layout, KeyboardConfigItem variant, QIcon icon)
         : m_layout(layout), m_variant(variant)
     {
         setText(keyboardtr(m_layout.name) + " " + keyboardtr(m_layout.description) + " " + keyboardtr(variant.description));
+        setIcon(icon);
     }
     virtual ~KeyboardLayoutListWidgetItem();
     KeyboardConfigItem m_layout;

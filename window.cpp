@@ -30,7 +30,7 @@ Window::Window(QWidget *parent) :
         if(result == QDialog::Accepted)
         {
             auto r = dialog.selectedLayout();
-            ui->listWidget_KeyboardLayouts->addItem(new KeyboardLayoutListWidgetItem{r.first, r.second});
+            ui->listWidget_KeyboardLayouts->addItem(new KeyboardLayoutListWidgetItem{r.first, r.second, m_keyboardInfo.layoutIcon(r.first.name)});
         }
     });
 
@@ -230,7 +230,7 @@ void Window::loadDefaults()
                         }
                     }
                 }
-                ui->listWidget_KeyboardLayouts->addItem(new KeyboardLayoutListWidgetItem{layout, variant});
+                ui->listWidget_KeyboardLayouts->addItem(new KeyboardLayoutListWidgetItem{layout, variant, m_keyboardInfo.layoutIcon(layout.name)});
                 break;
             }
         }
