@@ -14,7 +14,8 @@
    <string>System Keyboard</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="keyboard"/>
+   <iconset theme="keyboard">
+    <normaloff>.</normaloff>.</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -75,8 +76,7 @@
                  </sizepolicy>
                 </property>
                 <property name="icon">
-                 <iconset theme="arrow-up">
-                  <normaloff>.</normaloff>.</iconset>
+                 <iconset theme="go-up"/>
                 </property>
                </widget>
               </item>
@@ -89,8 +89,7 @@
                  </sizepolicy>
                 </property>
                 <property name="icon">
-                 <iconset theme="arrow-down">
-                  <normaloff>.</normaloff>.</iconset>
+                 <iconset theme="go-down"/>
                 </property>
                </widget>
               </item>
@@ -103,8 +102,7 @@
                  </sizepolicy>
                 </property>
                 <property name="icon">
-                 <iconset theme="delete">
-                  <normaloff>.</normaloff>.</iconset>
+                 <iconset theme="edit-delete"/>
                 </property>
                </widget>
               </item>
