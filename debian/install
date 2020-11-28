@@ -1,6 +1,6 @@
 system-keyboard-qt	 		 usr/bin
 system-keyboard-qt.desktop	 usr/share/applications
-system-keyboard-mx.svg usr/share/icons/hicolor/scalable/apps
+system-keyboard-qt.svg usr/share/icons/hicolor/scalable/apps
 #translations/*.qm 	 usr/share/mx-tweak/locale
 #license.html            usr/share/doc/system-keyboard-qt
 #help/*					usr/share/doc/system-keyboard-qt/help
