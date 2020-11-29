@@ -29,7 +29,10 @@ public:
     KeyboardLayoutListWidgetItem(KeyboardConfigItem layout, KeyboardConfigItem variant, QIcon icon)
         : m_layout(layout), m_variant(variant)
     {
-        setText(keyboardtr(m_layout.name) + " " + keyboardtr(m_layout.description) + " " + keyboardtr(variant.description));
+        QString variantTranslated = keyboardtr(variant.description);
+        if(variant.description.isEmpty())
+            variantTranslated = "";
+        setText(keyboardtr(m_layout.name) + " " + keyboardtr(m_layout.description) + " " + variantTranslated);
         setIcon(icon);
     }
     virtual ~KeyboardLayoutListWidgetItem();
