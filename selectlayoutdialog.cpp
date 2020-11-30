@@ -50,11 +50,11 @@ void SelectLayoutDialog::refreshSelectedVariants()
 {
     for(auto layout : m_info.layouts())
     {
-        if(layout.config.description == ui->comboBox_SelectedLayout->currentText())
+        if(layout.config.name == ui->comboBox_SelectedLayout->currentData(NameRole))
         {
             ui->comboBox_SelectedVariant->clear();
             ui->comboBox_SelectedVariant->addItem(tr("No Variant"));
-            ui->comboBox_SelectedVariant->setItemData(0, "No Variant", NameRole);
+            ui->comboBox_SelectedVariant->setItemData(0, "system-keyboard-qt-no-variant", NameRole);
             for(auto variant : layout.variants)
             {
                 ui->comboBox_SelectedVariant->addItem(keyboardtr(variant.description));
