@@ -17,12 +17,16 @@ Window::Window(QWidget *parent) :
     ui->setupUi(this);
     ui->listWidget_KeyboardLayouts->setSelectionBehavior(QListWidget::SelectItems);
     ui->listWidget_KeyboardLayouts->setSelectionMode(QListWidget::SingleSelection);
+    ui->lineEdit_Search->setFocus();
+
     for(auto model : m_keyboardInfo.models())
     {
         ui->comboBox_KeyboardModel->addItem(keyboardtr(model.description));
         int index = ui->comboBox_KeyboardModel->count() - 1;
         ui->comboBox_KeyboardModel->setItemData(index, {model.name}, OptionName);
     }
+    ui->comboBox_KeyboardModel->model()->sort(0);
+
 
     connect(ui->pushButton_AddLayout, &QPushButton::clicked, [this](){
         SelectLayoutDialog dialog{m_keyboardInfo, this};
@@ -322,4 +326,20 @@ void Window::populateLayout(QLayout *layout, QStringList options)
 
 KeyboardLayoutListWidgetItem::~KeyboardLayoutListWidgetItem()
 {
+}
+
+void Window::on_lineEdit_Search_textChanged(const QString &arg1)
+{
+    ui->comboBox_KeyboardModel->clear();
+
+    for(const auto& model : m_keyboardInfo.models())
+    {
+        if(arg1.isEmpty() || model.name.contains(arg1, Qt::CaseInsensitive) || model.vendor.contains(arg1, Qt::CaseInsensitive)
+                || model.description.contains(arg1, Qt::CaseInsensitive)) {
+            ui->comboBox_KeyboardModel->addItem(keyboardtr(model.description));
+            int index = ui->comboBox_KeyboardModel->count() - 1;
+            ui->comboBox_KeyboardModel->setItemData(index, {model.name}, OptionName);
+        }
+    }
+    ui->comboBox_KeyboardModel->model()->sort(0);
 }
