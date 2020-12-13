@@ -51,6 +51,8 @@ private slots:
     void refreshLayoutButtonStates();
     QString generateOutput();
     void loadDefaults();
+    void on_lineEdit_Search_textChanged(const QString &arg1);
+
 private:
     bool apply();
 
