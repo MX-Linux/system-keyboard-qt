@@ -25,6 +25,7 @@ Window::Window(QWidget *parent) :
         int index = ui->comboBox_KeyboardModel->count() - 1;
         ui->comboBox_KeyboardModel->setItemData(index, {model.name}, OptionName);
     }
+    ui->comboBox_KeyboardModel->model()->sort(0);
 
 
     connect(ui->pushButton_AddLayout, &QPushButton::clicked, [this](){
@@ -340,5 +341,5 @@ void Window::on_lineEdit_Search_textChanged(const QString &arg1)
             ui->comboBox_KeyboardModel->setItemData(index, {model.name}, OptionName);
         }
     }
-
+    ui->comboBox_KeyboardModel->model()->sort(0);
 }
