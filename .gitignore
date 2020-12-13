@@ -2,6 +2,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/qtcreator,qt,c++
 # Edit at https://www.toptal.com/developers/gitignore?templates=qtcreator,qt,c++
 
+# Exclude binary
+system-keyboard-qt
+
 ### C++ ###
 # Prerequisites
 *.d
