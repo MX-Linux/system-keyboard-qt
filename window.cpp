@@ -17,12 +17,17 @@ Window::Window(QWidget *parent) :
     ui->setupUi(this);
     ui->listWidget_KeyboardLayouts->setSelectionBehavior(QListWidget::SelectItems);
     ui->listWidget_KeyboardLayouts->setSelectionMode(QListWidget::SingleSelection);
+    ui->lineEdit_Search->setFocus();
+    //ui->comboBox_KeyboardModel->setEditable(true);
+
     for(auto model : m_keyboardInfo.models())
     {
         ui->comboBox_KeyboardModel->addItem(keyboardtr(model.description));
         int index = ui->comboBox_KeyboardModel->count() - 1;
         ui->comboBox_KeyboardModel->setItemData(index, {model.name}, OptionName);
     }
+    ui->comboBox_KeyboardModel->model()->sort(0);
+
 
     connect(ui->pushButton_AddLayout, &QPushButton::clicked, [this](){
         SelectLayoutDialog dialog{m_keyboardInfo, this};
@@ -79,6 +84,32 @@ Window::Window(QWidget *parent) :
         {
             close();
         }
+    });
+
+    connect(ui->pushButton_Help, &QPushButton::clicked, [](){
+        QLocale locale;
+        QString lang = locale.bcp47Name();
+
+        QFileInfo viewer("/usr/bin/mx-viewer");
+        QFileInfo viewer2("/usr/bin/antix-viewer");
+
+        QString url = "file:///usr/share/doc/system-keyboard-qt/help/help.html";
+        QString cmd;
+
+        if (viewer.exists())
+        {
+            cmd = QString("mx-viewer %1 '%2' &").arg(url).arg(tr("System Keyboard"));
+        }
+        else if (viewer2.exists())
+        {
+            cmd = QString("antix-viewer %1 '%2' &").arg(url).arg(tr("System Keyboard"));
+        }
+        else
+        {
+            cmd = QString("xdg-open %1 &").arg(url).arg(tr("System Keyboard"));
+        }
+
+        system(cmd.toUtf8());
     });
 
     connect(ui->listWidget_KeyboardLayouts, &QListWidget::itemSelectionChanged, this, &Window::refreshLayoutButtonStates);
@@ -322,4 +353,20 @@ void Window::populateLayout(QLayout *layout, QStringList options)
 
 KeyboardLayoutListWidgetItem::~KeyboardLayoutListWidgetItem()
 {
+}
+
+void Window::on_lineEdit_Search_textChanged(const QString &arg1)
+{
+    ui->comboBox_KeyboardModel->clear();
+
+    for(const auto& model : m_keyboardInfo.models())
+    {
+        if(arg1.isEmpty() || model.name.contains(arg1, Qt::CaseInsensitive) || model.vendor.contains(arg1, Qt::CaseInsensitive)
+                || model.description.contains(arg1, Qt::CaseInsensitive)) {
+            ui->comboBox_KeyboardModel->addItem(keyboardtr(model.description));
+            int index = ui->comboBox_KeyboardModel->count() - 1;
+            ui->comboBox_KeyboardModel->setItemData(index, {model.name}, OptionName);
+        }
+    }
+    ui->comboBox_KeyboardModel->model()->sort(0);
 }

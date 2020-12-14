@@ -37,6 +37,28 @@
           <item>
            <widget class="QComboBox" name="comboBox_KeyboardModel"/>
           </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_Search">
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="inputMask">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="dragEnabled">
+             <bool>false</bool>
+            </property>
+            <property name="placeholderText">
+             <string>search</string>
+            </property>
+            <property name="clearButtonEnabled">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>
@@ -76,7 +98,8 @@
                  </sizepolicy>
                 </property>
                 <property name="icon">
-                 <iconset theme="go-up"/>
+                 <iconset theme="go-up">
+                  <normaloff>.</normaloff>.</iconset>
                 </property>
                </widget>
               </item>
@@ -89,7 +112,8 @@
                  </sizepolicy>
                 </property>
                 <property name="icon">
-                 <iconset theme="go-down"/>
+                 <iconset theme="go-down">
+                  <normaloff>.</normaloff>.</iconset>
                 </property>
                </widget>
               </item>
@@ -102,7 +126,8 @@
                  </sizepolicy>
                 </property>
                 <property name="icon">
-                 <iconset theme="edit-delete"/>
+                 <iconset theme="edit-delete">
+                  <normaloff>.</normaloff>.</iconset>
                 </property>
                </widget>
               </item>
@@ -177,11 +202,25 @@
     </widget>
    </item>
    <item>
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-     </property>
-    </widget>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QPushButton" name="pushButton_Help">
+       <property name="text">
+        <string>Help</string>
+       </property>
+       <property name="icon">
+        <iconset theme="help"/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDialogButtonBox" name="buttonBox">
+       <property name="standardButtons">
+        <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
