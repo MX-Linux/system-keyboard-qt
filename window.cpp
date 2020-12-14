@@ -9,6 +9,7 @@
 #include <QProcess>
 #include <QEventLoop>
 #include <QMessageBox>
+#include "unistd.h"
 
 Window::Window(QWidget *parent) :
     QWidget(parent),
@@ -89,26 +90,31 @@ Window::Window(QWidget *parent) :
     connect(ui->pushButton_Help, &QPushButton::clicked, [](){
         QLocale locale;
         QString lang = locale.bcp47Name();
-
         QFileInfo viewer("/usr/bin/mx-viewer");
         QFileInfo viewer2("/usr/bin/antix-viewer");
-
+        QString rootrunoption;
         QString url = "file:///usr/share/doc/system-keyboard-qt/help/help.html";
         QString cmd;
 
-        if (viewer.exists())
+        rootrunoption.clear();
+
+        if (getuid() == 0){
+            rootrunoption = "runuser -l $(logname) -c ";
+        }
+
+        if (!viewer.exists())
         {
-            cmd = QString("mx-viewer %1 '%2' &").arg(url).arg(tr("System Keyboard"));
+            cmd = QString(rootrunoption + "\"DISPLAY=$DISPLAY mx-viewer %1 '%2'\" &").arg(url).arg(tr("System Keyboard"));
         }
         else if (viewer2.exists())
         {
-            cmd = QString("antix-viewer %1 '%2' &").arg(url).arg(tr("System Keyboard"));
+            cmd = QString(rootrunoption + "\"DISPLAY=$DISPLAY antix-viewer %1 '%2'\" &").arg(url).arg(tr("System Keyboard"));
         }
         else
         {
-            cmd = QString("xdg-open %1 &").arg(url).arg(tr("System Keyboard"));
-        }
+            cmd = QString(rootrunoption + "\"DISPLAY=$DISPLAY xdg-open %1\" &").arg(url);
 
+}
         system(cmd.toUtf8());
     });
 
