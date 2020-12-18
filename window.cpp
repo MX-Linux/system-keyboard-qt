@@ -102,13 +102,13 @@ Window::Window(QWidget *parent) :
             rootrunoption = "runuser -l $(logname) -c ";
         }
 
-        if (!viewer.exists())
+        if (viewer.exists())
         {
-            cmd = QString(rootrunoption + "\"DISPLAY=$DISPLAY mx-viewer %1 '%2'\" &").arg(url).arg(tr("System Keyboard"));
+            cmd = QString("mx-viewer %1 '%2' &").arg(url).arg(tr("System Keyboard"));
         }
         else if (viewer2.exists())
         {
-            cmd = QString(rootrunoption + "\"DISPLAY=$DISPLAY antix-viewer %1 '%2'\" &").arg(url).arg(tr("System Keyboard"));
+            cmd = QString("antix-viewer %1 '%2' &").arg(url).arg(tr("System Keyboard"));
         }
         else
         {
