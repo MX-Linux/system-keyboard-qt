@@ -260,9 +260,6 @@ void Window::loadDefaults()
         {
             if(l.config.name == layouts[i])
             {
-                qDebug() << "Found layout:" << l.config.name;
-                qDebug() << "Variant name:" << variants[i];
-                qDebug() << "Avaliable Variants:" << l.variants;
                 KeyboardConfigItem layout = l.config;
                 KeyboardConfigItem variant;
                 if(i <= variants.size())
