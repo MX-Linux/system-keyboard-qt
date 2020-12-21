@@ -98,7 +98,7 @@
                  </sizepolicy>
                 </property>
                 <property name="icon">
-                 <iconset theme="go-up">
+                 <iconset theme="up">
                   <normaloff>.</normaloff>.</iconset>
                 </property>
                </widget>
@@ -112,7 +112,7 @@
                  </sizepolicy>
                 </property>
                 <property name="icon">
-                 <iconset theme="go-down">
+                 <iconset theme="down">
                   <normaloff>.</normaloff>.</iconset>
                 </property>
                </widget>
@@ -209,7 +209,8 @@
         <string>Help</string>
        </property>
        <property name="icon">
-        <iconset theme="help"/>
+        <iconset theme="help">
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>
