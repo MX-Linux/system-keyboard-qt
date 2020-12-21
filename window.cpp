@@ -253,16 +253,19 @@ void Window::loadDefaults()
         }
     }
     QStringList layouts = parser.config["XKBLAYOUT"].split(',');
-    QStringList variants = parser.config["XKBVARIANT"].split(',');
+    QStringList variants = parser.config["XKBVARIANT"].split(',', QString::KeepEmptyParts);
     for(int i = 0; i < layouts.size(); i++)
     {
         for(auto l : m_keyboardInfo.layouts())
         {
             if(l.config.name == layouts[i])
             {
+                qDebug() << "Found layout:" << l.config.name;
+                qDebug() << "Variant name:" << variants[i];
+                qDebug() << "Avaliable Variants:" << l.variants;
                 KeyboardConfigItem layout = l.config;
                 KeyboardConfigItem variant;
-                if(i >= variants.size())
+                if(i <= variants.size())
                 {
                     for(auto v : l.variants)
                     {
