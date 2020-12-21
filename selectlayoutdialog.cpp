@@ -16,6 +16,7 @@ SelectLayoutDialog::SelectLayoutDialog(const KeyboardInfo &info, QWidget *parent
         ui->comboBox_SelectedLayout->setItemData(index, layout.config.name, NameRole);
     }
     refreshSelectedVariants();
+    ui->comboBox_SelectedLayout->model()->sort(0);
 
     connect(ui->comboBox_SelectedLayout, &QComboBox::currentTextChanged, [this](QString){
         refreshSelectedVariants();
@@ -64,4 +65,5 @@ void SelectLayoutDialog::refreshSelectedVariants()
             break;
         }
     }
+    ui->comboBox_SelectedVariant->model()->sort(0);
 }

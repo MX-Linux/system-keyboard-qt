@@ -63,6 +63,7 @@ private:
     void readOptionList(QXmlStreamReader& reader);
     void readOptionGroup(QXmlStreamReader& reader);
     void readOption(QXmlStreamReader& reader, KeyboardOptionGroup& parent);
+    void addLayout(const KeyboardLayout& layout);
     QList<KeyboardModel> m_models;
     QList<KeyboardLayout> m_layouts;
     QList<KeyboardOptionGroup> m_optionGroups;
