@@ -100,7 +100,7 @@ void KeyboardInfo::readLayout(QXmlStreamReader& reader)
         else if(reader.name() == "variantList")
             readVariantList(reader, layout);
     }
-    m_layouts.append(layout);
+    addLayout(layout);
 }
 
 void KeyboardInfo::readConfigItem(QXmlStreamReader& reader, KeyboardConfigItem &item)
@@ -201,6 +201,19 @@ void KeyboardInfo::readOption(QXmlStreamReader &reader, KeyboardOptionGroup &par
             readConfigItem(reader, item);
     }
     parent.options.append(item);
+}
+
+void KeyboardInfo::addLayout(const KeyboardLayout &layout)
+{
+    auto iter = std::find_if(m_layouts.begin(), m_layouts.end(), [layout](const KeyboardLayout& other){
+        return other.config.name == layout.config.name;
+    });
+    if(iter == m_layouts.end())
+    {
+        m_layouts.append(layout);
+        return;
+    }
+    (*iter).variants.append(layout.variants);
 }
 
 QIcon KeyboardInfo::layoutIcon(QString layoutName)

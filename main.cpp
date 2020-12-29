@@ -22,6 +22,10 @@ int main(int argc, char *argv[])
 
         return a.exec();
     } else {
+#ifdef QT_DEBUG
+        system("su-to-root -X -c " + QCoreApplication::applicationFilePath().toUtf8() + "");
+#else
         system("su-to-root -X -c " + QCoreApplication::applicationFilePath().toUtf8() + "&");
+#endif
     }
 }

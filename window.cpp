@@ -9,6 +9,7 @@
 #include <QProcess>
 #include <QEventLoop>
 #include <QMessageBox>
+#include "unistd.h"
 
 Window::Window(QWidget *parent) :
     QWidget(parent),
@@ -28,6 +29,12 @@ Window::Window(QWidget *parent) :
     }
     ui->comboBox_KeyboardModel->model()->sort(0);
 
+    //fallback icons are used when the theme icon is not supported...or theme is not present
+    ui->pushButton_AddLayout->setIcon(QIcon::fromTheme("list-add", QIcon(":/icons/list-add.png")));
+    ui->pushButton_MoveLayoutUp->setIcon(QIcon::fromTheme("go-up", QIcon(":/icons/go-up.png")));
+    ui->pushButton_MoveLayoutDown->setIcon(QIcon::fromTheme("go-down", QIcon(":/icons/go-down.png")));
+    ui->pushButton_RemoveLayout->setIcon(QIcon::fromTheme("list-remove", QIcon(":/icons/list-remove.png")));
+    ui->pushButton_Help->setIcon(QIcon::fromTheme("help-about", QIcon(":/icons/help-about.png")));
 
     connect(ui->pushButton_AddLayout, &QPushButton::clicked, [this](){
         SelectLayoutDialog dialog{m_keyboardInfo, this};
@@ -89,12 +96,17 @@ Window::Window(QWidget *parent) :
     connect(ui->pushButton_Help, &QPushButton::clicked, [](){
         QLocale locale;
         QString lang = locale.bcp47Name();
-
         QFileInfo viewer("/usr/bin/mx-viewer");
         QFileInfo viewer2("/usr/bin/antix-viewer");
-
+        QString rootrunoption;
         QString url = "file:///usr/share/doc/system-keyboard-qt/help/help.html";
         QString cmd;
+
+        rootrunoption.clear();
+
+        if (getuid() == 0){
+            rootrunoption = "runuser -l $(logname) -c ";
+        }
 
         if (viewer.exists())
         {
@@ -106,9 +118,9 @@ Window::Window(QWidget *parent) :
         }
         else
         {
-            cmd = QString("xdg-open %1 &").arg(url).arg(tr("System Keyboard"));
-        }
+            cmd = QString(rootrunoption + "\"DISPLAY=$DISPLAY xdg-open %1\" &").arg(url);
 
+}
         system(cmd.toUtf8());
     });
 
@@ -196,25 +208,28 @@ bool Window::apply()
         stream << parser.source();
         io.close();
     }
-    QEventLoop loop;
-    QProcess proc;
-    QObject::connect(&proc, QOverload<int>::of(&QProcess::finished), &loop, &QEventLoop::quit);
-    auto command = QString("setxkbmap");
-    auto commandOptions = QStringList()
-               << "-model" << getModel()
-               << "-layout" << getLayoutsAndVariants().first.join(',')
-               << "-variant" << getLayoutsAndVariants().second.join(',')
-               << "-option" << getOptions().join(',');
-    proc.start("setxkbmap", commandOptions);
-    loop.exec();
-    QObject::disconnect(&proc, nullptr, nullptr, nullptr);
-    if(proc.exitCode() != 0)
-    {
-        QMessageBox::critical(this, tr("Error"), tr("Command exited with code non-zero: ") + (QStringList() << command << commandOptions).join(' '), QMessageBox::Close);
-        qDebug() << proc.readAllStandardError();
-        return false;
-    }
-    proc.close();
+    // makes X see the changes to /etc/default/keyboard right away
+    // is better than setxkbmap because if you logout but don't reboot the changes don't apply
+    system("udevadm trigger --subsystem-match=input --action=change");
+//    QEventLoop loop;
+//    QProcess proc;
+//    QObject::connect(&proc, QOverload<int>::of(&QProcess::finished), &loop, &QEventLoop::quit);
+//    auto command = QString("setxkbmap");
+//    auto commandOptions = QStringList()
+//               << "-model" << getModel()
+//               << "-layout" << getLayoutsAndVariants().first.join(',')
+//               << "-variant" << getLayoutsAndVariants().second.join(',')
+//               << "-option" << getOptions().join(',');
+//    proc.start("setxkbmap", commandOptions);
+//    loop.exec();
+//    QObject::disconnect(&proc, nullptr, nullptr, nullptr);
+//    if(proc.exitCode() != 0)
+//    {
+//        QMessageBox::critical(this, tr("Error"), tr("Command exited with code non-zero: ") + (QStringList() << command << commandOptions).join(' '), QMessageBox::Close);
+//        qDebug() << proc.readAllStandardError();
+//        return false;
+//    }
+//    proc.close();
     return true;
 }
 
@@ -244,7 +259,7 @@ void Window::loadDefaults()
         }
     }
     QStringList layouts = parser.config["XKBLAYOUT"].split(',');
-    QStringList variants = parser.config["XKBVARIANT"].split(',');
+    QStringList variants = parser.config["XKBVARIANT"].split(',', QString::KeepEmptyParts);
     for(int i = 0; i < layouts.size(); i++)
     {
         for(auto l : m_keyboardInfo.layouts())
@@ -253,7 +268,7 @@ void Window::loadDefaults()
             {
                 KeyboardConfigItem layout = l.config;
                 KeyboardConfigItem variant;
-                if(i >= variants.size())
+                if(i <= variants.size())
                 {
                     for(auto v : l.variants)
                     {
