@@ -29,6 +29,12 @@ Window::Window(QWidget *parent) :
     }
     ui->comboBox_KeyboardModel->model()->sort(0);
 
+    //fallback icons are used when the theme icon is not supported...or theme is not present
+    ui->pushButton_AddLayout->setIcon(QIcon::fromTheme("list-add", QIcon(":/icons/list-add.png")));
+    ui->pushButton_MoveLayoutUp->setIcon(QIcon::fromTheme("go-up", QIcon(":/icons/go-up.png")));
+    ui->pushButton_MoveLayoutDown->setIcon(QIcon::fromTheme("go-down", QIcon(":/icons/go-down.png")));
+    ui->pushButton_RemoveLayout->setIcon(QIcon::fromTheme("list-remove", QIcon(":/icons/list-remove.png")));
+    ui->pushButton_Help->setIcon(QIcon::fromTheme("help-about", QIcon(":/icons/help-about.png")));
 
     connect(ui->pushButton_AddLayout, &QPushButton::clicked, [this](){
         SelectLayoutDialog dialog{m_keyboardInfo, this};
