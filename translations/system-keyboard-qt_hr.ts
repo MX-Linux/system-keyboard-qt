@@ -1,91 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="hr_HR">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="hr" version="2.1">
 <context>
     <name>SelectLayoutDialog</name>
     <message>
-        <location filename="../selectlayoutdialog.ui" line="14"/>
+        <location filename="selectlayoutdialog.ui" line="14"/>
         <source>Select Keyboard Layout and Variant</source>
-        <translation type="unfinished"></translation>
+        <translation>Odaberite raspored tipkovnice i inačicu</translation>
     </message>
     <message>
-        <location filename="../selectlayoutdialog.ui" line="29"/>
+        <location filename="selectlayoutdialog.ui" line="29"/>
         <source>Layout</source>
-        <translation type="unfinished"></translation>
+        <translation>Raspored</translation>
     </message>
     <message>
-        <location filename="../selectlayoutdialog.ui" line="47"/>
+        <location filename="selectlayoutdialog.ui" line="47"/>
         <source>Variants</source>
-        <translation type="unfinished"></translation>
+        <translation>Inačice</translation>
     </message>
     <message>
-        <location filename="../selectlayoutdialog.cpp" line="57"/>
+        <location filename="selectlayoutdialog.cpp" line="57"/>
         <source>No Variant</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>Window</name>
     <message>
-        <location filename="../window.ui" line="14"/>
-        <location filename="../window.cpp" line="113"/>
-        <location filename="../window.cpp" line="117"/>
+        <location filename="window.ui" line="14"/>
+        <location filename="window.cpp" line="113"/>
+        <location filename="window.cpp" line="117"/>
         <source>System Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipkovnica sustavaq</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="28"/>
+        <location filename="window.ui" line="28"/>
         <source>Layouts</source>
-        <translation type="unfinished"></translation>
+        <translation>Rasporedi</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="34"/>
+        <location filename="window.ui" line="34"/>
         <source>Keyboard Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Model tipkovnice</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="55"/>
+        <location filename="window.ui" line="55"/>
         <source>search</source>
-        <translation type="unfinished"></translation>
+        <translation>traži</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="68"/>
+        <location filename="window.ui" line="68"/>
         <source>Keyboard Layouts</source>
-        <translation type="unfinished"></translation>
+        <translation>Rasporedi tipkovnice</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="158"/>
+        <location filename="window.ui" line="158"/>
         <source>Hotkeys</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../window.ui" line="181"/>
+        <location filename="window.ui" line="181"/>
         <source>Advanced</source>
-        <translation type="unfinished"></translation>
+        <translation>Napredno</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="209"/>
+        <location filename="window.ui" line="209"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomoć</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="186"/>
-        <location filename="../window.cpp" line="204"/>
-        <location filename="../window.cpp" line="241"/>
+        <location filename="window.cpp" line="186"/>
+        <location filename="window.cpp" line="204"/>
+        <location filename="window.cpp" line="241"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Greška</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="186"/>
-        <location filename="../window.cpp" line="204"/>
-        <location filename="../window.cpp" line="241"/>
+        <location filename="window.cpp" line="186"/>
+        <location filename="window.cpp" line="204"/>
+        <location filename="window.cpp" line="241"/>
         <source>Failed to open file: </source>
-        <translation type="unfinished"></translation>
+        <translation>Neuspjeh u otvaranju datoteke:</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="241"/>
+        <location filename="window.cpp" line="241"/>
         <source>Most settings will not be loaded</source>
-        <translation type="unfinished"></translation>
+        <translation>Većina postavki neće biti učitana</translation>
+    </message>
+    <message>
+        <location filename="window.cpp" line="352"/>
+        <source>Disabled</source>
+        <translation>Onemogućeno</translation>
     </message>
 </context>
 </TS>

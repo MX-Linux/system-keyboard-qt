@@ -1,91 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="zh_CN">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="zh_CN" version="2.1">
 <context>
     <name>SelectLayoutDialog</name>
     <message>
-        <location filename="../selectlayoutdialog.ui" line="14"/>
+        <location filename="selectlayoutdialog.ui" line="14"/>
         <source>Select Keyboard Layout and Variant</source>
-        <translation type="unfinished"></translation>
+        <translation>选择键盘布局和变更</translation>
     </message>
     <message>
-        <location filename="../selectlayoutdialog.ui" line="29"/>
+        <location filename="selectlayoutdialog.ui" line="29"/>
         <source>Layout</source>
-        <translation type="unfinished"></translation>
+        <translation>布局</translation>
     </message>
     <message>
-        <location filename="../selectlayoutdialog.ui" line="47"/>
+        <location filename="selectlayoutdialog.ui" line="47"/>
         <source>Variants</source>
-        <translation type="unfinished"></translation>
+        <translation>变更</translation>
     </message>
     <message>
-        <location filename="../selectlayoutdialog.cpp" line="57"/>
+        <location filename="selectlayoutdialog.cpp" line="57"/>
         <source>No Variant</source>
-        <translation type="unfinished"></translation>
+        <translation>没有变化</translation>
     </message>
 </context>
 <context>
     <name>Window</name>
     <message>
-        <location filename="../window.ui" line="14"/>
-        <location filename="../window.cpp" line="113"/>
-        <location filename="../window.cpp" line="117"/>
+        <location filename="window.ui" line="14"/>
+        <location filename="window.cpp" line="113"/>
+        <location filename="window.cpp" line="117"/>
         <source>System Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>系统键盘</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="28"/>
+        <location filename="window.ui" line="28"/>
         <source>Layouts</source>
-        <translation type="unfinished"></translation>
+        <translation>布局</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="34"/>
+        <location filename="window.ui" line="34"/>
         <source>Keyboard Model</source>
-        <translation type="unfinished"></translation>
+        <translation>键盘型号</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="55"/>
+        <location filename="window.ui" line="55"/>
         <source>search</source>
-        <translation type="unfinished"></translation>
+        <translation>搜索</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="68"/>
+        <location filename="window.ui" line="68"/>
         <source>Keyboard Layouts</source>
-        <translation type="unfinished"></translation>
+        <translation>键盘布局</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="158"/>
+        <location filename="window.ui" line="158"/>
         <source>Hotkeys</source>
-        <translation type="unfinished"></translation>
+        <translation>热键</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="181"/>
+        <location filename="window.ui" line="181"/>
         <source>Advanced</source>
-        <translation type="unfinished"></translation>
+        <translation>高级</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="209"/>
+        <location filename="window.ui" line="209"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>帮助</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="186"/>
-        <location filename="../window.cpp" line="204"/>
-        <location filename="../window.cpp" line="241"/>
+        <location filename="window.cpp" line="186"/>
+        <location filename="window.cpp" line="204"/>
+        <location filename="window.cpp" line="241"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>错误</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="186"/>
-        <location filename="../window.cpp" line="204"/>
-        <location filename="../window.cpp" line="241"/>
+        <location filename="window.cpp" line="186"/>
+        <location filename="window.cpp" line="204"/>
+        <location filename="window.cpp" line="241"/>
         <source>Failed to open file: </source>
-        <translation type="unfinished"></translation>
+        <translation>无法打开文件:</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="241"/>
+        <location filename="window.cpp" line="241"/>
         <source>Most settings will not be loaded</source>
-        <translation type="unfinished"></translation>
+        <translation>大多数设置不会被加载</translation>
+    </message>
+    <message>
+        <location filename="window.cpp" line="352"/>
+        <source>Disabled</source>
+        <translation>未启用</translation>
     </message>
 </context>
 </TS>

@@ -1,91 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="he_IL">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="he_IL" version="2.1">
 <context>
     <name>SelectLayoutDialog</name>
     <message>
-        <location filename="../selectlayoutdialog.ui" line="14"/>
+        <location filename="selectlayoutdialog.ui" line="14"/>
         <source>Select Keyboard Layout and Variant</source>
-        <translation type="unfinished"></translation>
+        <translation>נא לבחור פריסת מקלדת והגוון</translation>
     </message>
     <message>
-        <location filename="../selectlayoutdialog.ui" line="29"/>
+        <location filename="selectlayoutdialog.ui" line="29"/>
         <source>Layout</source>
-        <translation type="unfinished"></translation>
+        <translation>פריסה</translation>
     </message>
     <message>
-        <location filename="../selectlayoutdialog.ui" line="47"/>
+        <location filename="selectlayoutdialog.ui" line="47"/>
         <source>Variants</source>
-        <translation type="unfinished"></translation>
+        <translation>הגוונים</translation>
     </message>
     <message>
-        <location filename="../selectlayoutdialog.cpp" line="57"/>
+        <location filename="selectlayoutdialog.cpp" line="57"/>
         <source>No Variant</source>
-        <translation type="unfinished"></translation>
+        <translation>אין הגוונים</translation>
     </message>
 </context>
 <context>
     <name>Window</name>
     <message>
-        <location filename="../window.ui" line="14"/>
-        <location filename="../window.cpp" line="113"/>
-        <location filename="../window.cpp" line="117"/>
+        <location filename="window.ui" line="14"/>
+        <location filename="window.cpp" line="113"/>
+        <location filename="window.cpp" line="117"/>
         <source>System Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>מקלדת המערכת</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="28"/>
+        <location filename="window.ui" line="28"/>
         <source>Layouts</source>
-        <translation type="unfinished"></translation>
+        <translation>פריסות</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="34"/>
+        <location filename="window.ui" line="34"/>
         <source>Keyboard Model</source>
-        <translation type="unfinished"></translation>
+        <translation>דגם מקלדת</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="55"/>
+        <location filename="window.ui" line="55"/>
         <source>search</source>
-        <translation type="unfinished"></translation>
+        <translation>חיפוש</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="68"/>
+        <location filename="window.ui" line="68"/>
         <source>Keyboard Layouts</source>
-        <translation type="unfinished"></translation>
+        <translation>פריסות מקלדת</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="158"/>
+        <location filename="window.ui" line="158"/>
         <source>Hotkeys</source>
-        <translation type="unfinished"></translation>
+        <translation>מקשי קיצור</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="181"/>
+        <location filename="window.ui" line="181"/>
         <source>Advanced</source>
-        <translation type="unfinished"></translation>
+        <translation>אפשרויות מתקדמות</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="209"/>
+        <location filename="window.ui" line="209"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>עזרה</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="186"/>
-        <location filename="../window.cpp" line="204"/>
-        <location filename="../window.cpp" line="241"/>
+        <location filename="window.cpp" line="186"/>
+        <location filename="window.cpp" line="204"/>
+        <location filename="window.cpp" line="241"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>שגיאה</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="186"/>
-        <location filename="../window.cpp" line="204"/>
-        <location filename="../window.cpp" line="241"/>
+        <location filename="window.cpp" line="186"/>
+        <location filename="window.cpp" line="204"/>
+        <location filename="window.cpp" line="241"/>
         <source>Failed to open file: </source>
-        <translation type="unfinished"></translation>
+        <translation>פתיחת הקובץ נכשלה:</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="241"/>
+        <location filename="window.cpp" line="241"/>
         <source>Most settings will not be loaded</source>
-        <translation type="unfinished"></translation>
+        <translation>רוב ההגדרות לא תיטענה</translation>
+    </message>
+    <message>
+        <location filename="window.cpp" line="352"/>
+        <source>Disabled</source>
+        <translation>מושבת</translation>
     </message>
 </context>
 </TS>

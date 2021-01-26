@@ -1,91 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="it_IT">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
 <context>
     <name>SelectLayoutDialog</name>
     <message>
-        <location filename="../selectlayoutdialog.ui" line="14"/>
+        <location filename="selectlayoutdialog.ui" line="14"/>
         <source>Select Keyboard Layout and Variant</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona la disposizione e il tipo di tastiera</translation>
     </message>
     <message>
-        <location filename="../selectlayoutdialog.ui" line="29"/>
+        <location filename="selectlayoutdialog.ui" line="29"/>
         <source>Layout</source>
-        <translation type="unfinished"></translation>
+        <translation>Disposizione</translation>
     </message>
     <message>
-        <location filename="../selectlayoutdialog.ui" line="47"/>
+        <location filename="selectlayoutdialog.ui" line="47"/>
         <source>Variants</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipi</translation>
     </message>
     <message>
-        <location filename="../selectlayoutdialog.cpp" line="57"/>
+        <location filename="selectlayoutdialog.cpp" line="57"/>
         <source>No Variant</source>
-        <translation type="unfinished"></translation>
+        <translation>Nessun tipo</translation>
     </message>
 </context>
 <context>
     <name>Window</name>
     <message>
-        <location filename="../window.ui" line="14"/>
-        <location filename="../window.cpp" line="113"/>
-        <location filename="../window.cpp" line="117"/>
+        <location filename="window.ui" line="14"/>
+        <location filename="window.cpp" line="113"/>
+        <location filename="window.cpp" line="117"/>
         <source>System Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Tastiera di sistema</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="28"/>
+        <location filename="window.ui" line="28"/>
         <source>Layouts</source>
-        <translation type="unfinished"></translation>
+        <translation>Disposizioni</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="34"/>
+        <location filename="window.ui" line="34"/>
         <source>Keyboard Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Modello di tastiera</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="55"/>
+        <location filename="window.ui" line="55"/>
         <source>search</source>
-        <translation type="unfinished"></translation>
+        <translation>cerca</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="68"/>
+        <location filename="window.ui" line="68"/>
         <source>Keyboard Layouts</source>
-        <translation type="unfinished"></translation>
+        <translation>Disposizioni della tastiera</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="158"/>
+        <location filename="window.ui" line="158"/>
         <source>Hotkeys</source>
-        <translation type="unfinished"></translation>
+        <translation>Tasti di scelta rapida</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="181"/>
+        <location filename="window.ui" line="181"/>
         <source>Advanced</source>
-        <translation type="unfinished"></translation>
+        <translation>Avanzate</translation>
     </message>
     <message>
-        <location filename="../window.ui" line="209"/>
+        <location filename="window.ui" line="209"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Aiuto</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="186"/>
-        <location filename="../window.cpp" line="204"/>
-        <location filename="../window.cpp" line="241"/>
+        <location filename="window.cpp" line="186"/>
+        <location filename="window.cpp" line="204"/>
+        <location filename="window.cpp" line="241"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="186"/>
-        <location filename="../window.cpp" line="204"/>
-        <location filename="../window.cpp" line="241"/>
+        <location filename="window.cpp" line="186"/>
+        <location filename="window.cpp" line="204"/>
+        <location filename="window.cpp" line="241"/>
         <source>Failed to open file: </source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile aprire il file:</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="241"/>
+        <location filename="window.cpp" line="241"/>
         <source>Most settings will not be loaded</source>
-        <translation type="unfinished"></translation>
+        <translation>La maggior parte delle impostazioni non verrà caricata</translation>
+    </message>
+    <message>
+        <location filename="window.cpp" line="352"/>
+        <source>Disabled</source>
+        <translation>Disabilitato</translation>
     </message>
 </context>
 </TS>
