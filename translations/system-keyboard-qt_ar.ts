@@ -19,7 +19,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../selectlayoutdialog.cpp" line="56"/>
+        <location filename="../selectlayoutdialog.cpp" line="57"/>
         <source>No Variant</source>
         <translation type="unfinished"></translation>
     </message>
@@ -28,6 +28,8 @@
     <name>Window</name>
     <message>
         <location filename="../window.ui" line="14"/>
+        <location filename="../window.cpp" line="113"/>
+        <location filename="../window.cpp" line="117"/>
         <source>System Keyboard</source>
         <translation type="unfinished"></translation>
     </message>
@@ -42,48 +44,47 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.ui" line="46"/>
+        <location filename="../window.ui" line="55"/>
+        <source>search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.ui" line="68"/>
         <source>Keyboard Layouts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.ui" line="133"/>
+        <location filename="../window.ui" line="158"/>
         <source>Hotkeys</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.ui" line="156"/>
+        <location filename="../window.ui" line="181"/>
         <source>Advanced</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="143"/>
-        <location filename="../window.cpp" line="161"/>
-        <location filename="../window.cpp" line="182"/>
-        <location filename="../window.cpp" line="195"/>
+        <location filename="../window.ui" line="209"/>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="186"/>
+        <location filename="../window.cpp" line="204"/>
+        <location filename="../window.cpp" line="241"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="143"/>
-        <location filename="../window.cpp" line="161"/>
-        <location filename="../window.cpp" line="195"/>
+        <location filename="../window.cpp" line="186"/>
+        <location filename="../window.cpp" line="204"/>
+        <location filename="../window.cpp" line="241"/>
         <source>Failed to open file: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="182"/>
-        <source>Command exited with code non-zero: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../window.cpp" line="195"/>
+        <location filename="../window.cpp" line="241"/>
         <source>Most settings will not be loaded</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../window.cpp" line="306"/>
-        <source>Disabled</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
