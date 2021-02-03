@@ -349,7 +349,7 @@ void Window::populateLayout(QLayout *layout, QStringList options)
                 QComboBox* comboBox = new QComboBox;
                 box->setLayout(new QVBoxLayout);
                 box->layout()->addWidget(comboBox);
-                comboBox->addItem(tr("Disabled"));
+                comboBox->addItem("-");
                 int index = 1;
                 for(auto opt : option.options)
                 {
