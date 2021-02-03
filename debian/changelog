@@ -1,3 +1,9 @@
+system-keyboard-qt (21.02.01) mx; urgency=medium
+
+  * string changes 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Tue, 02 Feb 2021 22:18:11 -0500
+
 system-keyboard-qt (20.12.01) mx; urgency=medium
 
   * add fallback icons
