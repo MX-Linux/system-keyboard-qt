@@ -1,3 +1,9 @@
+system-keyboard-qt (21.02.02) mx; urgency=medium
+
+  * new translations 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 06 Feb 2021 12:36:31 -0500
+
 system-keyboard-qt (21.02.01) mx; urgency=medium
 
   * string changes 
