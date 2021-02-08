@@ -35,29 +35,7 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="QComboBox" name="comboBox_KeyboardModel"/>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="lineEdit_Search">
-            <property name="autoFillBackground">
-             <bool>false</bool>
-            </property>
-            <property name="inputMask">
-             <string/>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="dragEnabled">
-             <bool>false</bool>
-            </property>
-            <property name="placeholderText">
-             <string>search</string>
-            </property>
-            <property name="clearButtonEnabled">
-             <bool>true</bool>
-            </property>
-           </widget>
+           <widget class="FilterableComboBox" name="comboBox_KeyboardModel"/>
           </item>
          </layout>
         </widget>
@@ -226,6 +204,13 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>FilterableComboBox</class>
+   <extends>QComboBox</extends>
+   <header>filterablecombobox.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

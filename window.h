@@ -6,6 +6,9 @@
 #include "translation.h"
 #include "keyboardlayouts.h"
 
+#include <QStringListModel>
+#include <QSortFilterProxyModel>
+
 namespace Ui {
 class Window;
 }
@@ -51,7 +54,6 @@ private slots:
     void refreshLayoutButtonStates();
     QString generateOutput();
     void loadDefaults();
-    void on_lineEdit_Search_textChanged(const QString &arg1);
 
 private:
     bool apply();
@@ -67,6 +69,8 @@ private:
     Ui::Window *ui;
     KeyboardInfo m_keyboardInfo;
     QStringList m_extraOptions;
+    QStringListModel m_keyboardModelsModel;
+    QSortFilterProxyModel m_keyboardModelsModelFilter;
 };
 
 #endif // WINDOW_H
