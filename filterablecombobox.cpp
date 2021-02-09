@@ -10,6 +10,8 @@ FilterableComboBox::FilterableComboBox(QWidget *parent)
     m_filterModel->setSourceModel(model());
     m_filterModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
 
+    lineEdit()->setPlaceholderText(tr("Search"));
+
     m_completer = new QCompleter{m_filterModel, this};
     m_completer->setCompletionMode(QCompleter::UnfilteredPopupCompletion);
 
