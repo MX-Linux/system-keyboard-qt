@@ -12,8 +12,10 @@
 
 class FilterableComboBox : public QComboBox
 {
+    Q_OBJECT
 public:
     FilterableComboBox(QWidget* parent = nullptr);
+    ~FilterableComboBox();
     void setModel(QAbstractItemModel* model);
     void setModelColumn(int column);
     void setCurrentText(const QString& text);
@@ -23,8 +25,8 @@ public:
     void focusOutEvent(QFocusEvent* event);
 private:
     QString m_saved;
-    QCompleter* m_completer;
-    QSortFilterProxyModel* m_filterModel;
+    QSortFilterProxyModel m_filterModel;
+    QCompleter m_completer;
 
 };
 
