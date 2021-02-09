@@ -30,6 +30,7 @@ FilterableComboBox::FilterableComboBox(QWidget *parent)
         {
             int index = findText(text);
             setCurrentIndex(index);
+            m_saved = currentText();
         }
     });
 }
@@ -48,6 +49,24 @@ void FilterableComboBox::setModelColumn(int column)
     QComboBox::setModelColumn(column);
 }
 
+void FilterableComboBox::setCurrentText(const QString &text)
+{
+    QComboBox::setCurrentText(text);
+    if(findText(text) > -1)
+    {
+        m_saved = text;
+    }
+}
+
+void FilterableComboBox::setCurrentIndex(int index)
+{
+    QComboBox::setCurrentIndex(index);
+    if(index > -1)
+    {
+        m_saved = currentText();
+    }
+}
+
 QAbstractItemView *FilterableComboBox::view()
 {
     return m_completer->popup();
@@ -58,4 +77,18 @@ int FilterableComboBox::index()
     return currentIndex();
 }
 
+void FilterableComboBox::focusOutEvent(QFocusEvent *event)
+{
+    int index = findText(currentText());
+    if(index == -1)
+    {
+        qDebug() << m_saved;
+        index = findText(m_saved);
+    }
+    if(index == -1)
+    {
+        index = 0;
+    }
+    setCurrentIndex(index);
+}
 
