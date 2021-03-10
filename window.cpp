@@ -260,6 +260,12 @@ void Window::loadDefaults()
     }
     QStringList layouts = parser.config["XKBLAYOUT"].split(',');
     QStringList variants = parser.config["XKBVARIANT"].split(',', QString::KeepEmptyParts);
+
+    while ( variants.size() < layouts.size()){
+        variants.append(" ");
+    }
+
+
     for(int i = 0; i < layouts.size(); i++)
     {
         for(auto l : m_keyboardInfo.layouts())

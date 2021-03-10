@@ -1,3 +1,9 @@
+system-keyboard-qt (21.02.03) mx; urgency=medium
+
+  * fix segfault when variants < layouts
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 10 Mar 2021 18:26:07 -0500
+
 system-keyboard-qt (21.02.02) mx; urgency=medium
 
   * new translations 
