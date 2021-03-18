@@ -266,7 +266,7 @@ void Window::loadDefaults()
             {
                 KeyboardConfigItem layout = l.config;
                 KeyboardConfigItem variant;
-                if(i <= variants.size())
+                if(i < variants.size())
                 {
                     for(auto v : l.variants)
                     {
