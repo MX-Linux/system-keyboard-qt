@@ -30,14 +30,16 @@ SOURCES += \
     keyboardlayouts.cpp \
     selectlayoutdialog.cpp \
     posixconfigparser.cpp \
-    translation.cpp
+    translation.cpp \
+    filterablecombobox.cpp
 
 HEADERS += \
         window.h \
     keyboardlayouts.h \
     selectlayoutdialog.h \
     translation.h \
-    posixconfigparser.h
+    posixconfigparser.h \
+    filterablecombobox.h
 
 FORMS += \
         window.ui \
