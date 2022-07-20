@@ -1,25 +1,25 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="el">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="nl_BE">
 <context>
     <name>SelectLayoutDialog</name>
     <message>
         <location filename="selectlayoutdialog.ui" line="14"/>
         <source>Select Keyboard Layout and Variant</source>
-        <translation>Επιλέξτε Διάταξη πληκτρολογίου και παραλλαγή</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="selectlayoutdialog.ui" line="29"/>
         <source>Layout</source>
-        <translation>Διάταξη</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="selectlayoutdialog.ui" line="47"/>
         <source>Variants</source>
-        <translation>Παραλλαγές</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="selectlayoutdialog.cpp" line="57"/>
         <source>No Variant</source>
-        <translation>Χωρίς παραλλαγή</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -29,66 +29,66 @@
         <location filename="window.cpp" line="113"/>
         <location filename="window.cpp" line="117"/>
         <source>System Keyboard</source>
-        <translation>Πληκτρολόγιο συστήματος</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="window.ui" line="28"/>
         <source>Layouts</source>
-        <translation>Διατάξεις</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="window.ui" line="34"/>
         <source>Keyboard Model</source>
-        <translation>Μοντέλο πληκτρολογίου</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="window.ui" line="55"/>
         <source>search</source>
-        <translation>αναζήτηση</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="window.ui" line="68"/>
         <source>Keyboard Layouts</source>
-        <translation>Διάταξη πληκτρολογίου</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="window.ui" line="158"/>
         <source>Hotkeys</source>
-        <translation>Hotkeys</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="window.ui" line="181"/>
         <source>Advanced</source>
-        <translation>Προχωρημένα</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="window.ui" line="209"/>
         <source>Help</source>
-        <translation>Βοήθεια</translation>
+        <translation>Help</translation>
     </message>
     <message>
         <location filename="window.cpp" line="186"/>
         <location filename="window.cpp" line="204"/>
         <location filename="window.cpp" line="241"/>
         <source>Error</source>
-        <translation>Σφάλμα</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="window.cpp" line="186"/>
         <location filename="window.cpp" line="204"/>
         <location filename="window.cpp" line="241"/>
         <source>Failed to open file: </source>
-        <translation>Αποτυχία ανοίγματος αρχείου:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="window.cpp" line="241"/>
         <source>Most settings will not be loaded</source>
-        <translation>Οι περισσότερες ρυθμίσεις δεν θα φορτωθούν</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="window.cpp" line="352"/>
         <source>Disabled</source>
-        <translation>Απενεργοποιημένο</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>

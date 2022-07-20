@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fil_PH" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="fil_PH">
 <context>
     <name>SelectLayoutDialog</name>
     <message>

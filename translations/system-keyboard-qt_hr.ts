@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="hr" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="hr">
 <context>
     <name>SelectLayoutDialog</name>
     <message>
@@ -29,7 +29,7 @@
         <location filename="window.cpp" line="113"/>
         <location filename="window.cpp" line="117"/>
         <source>System Keyboard</source>
-        <translation>Tipkovnica sustavaq</translation>
+        <translation>Tipkovnica sustava</translation>
     </message>
     <message>
         <location filename="window.ui" line="28"/>

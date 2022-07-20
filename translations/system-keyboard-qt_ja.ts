@@ -1,25 +1,25 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ja" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="ja">
 <context>
     <name>SelectLayoutDialog</name>
     <message>
         <location filename="selectlayoutdialog.ui" line="14"/>
         <source>Select Keyboard Layout and Variant</source>
-        <translation type="unfinished"/>
+        <translation>キーボード・レイアウトとバリエーションを選択</translation>
     </message>
     <message>
         <location filename="selectlayoutdialog.ui" line="29"/>
         <source>Layout</source>
-        <translation type="unfinished"/>
+        <translation>レイアウト</translation>
     </message>
     <message>
         <location filename="selectlayoutdialog.ui" line="47"/>
         <source>Variants</source>
-        <translation type="unfinished"/>
+        <translation>バリエーション</translation>
     </message>
     <message>
         <location filename="selectlayoutdialog.cpp" line="57"/>
         <source>No Variant</source>
-        <translation type="unfinished"/>
+        <translation>バリエーション無し</translation>
     </message>
 </context>
 <context>
@@ -29,17 +29,17 @@
         <location filename="window.cpp" line="113"/>
         <location filename="window.cpp" line="117"/>
         <source>System Keyboard</source>
-        <translation type="unfinished"/>
+        <translation>システムキーボード</translation>
     </message>
     <message>
         <location filename="window.ui" line="28"/>
         <source>Layouts</source>
-        <translation type="unfinished"/>
+        <translation>レイアウト</translation>
     </message>
     <message>
         <location filename="window.ui" line="34"/>
         <source>Keyboard Model</source>
-        <translation type="unfinished"/>
+        <translation>キーボードモデル</translation>
     </message>
     <message>
         <location filename="window.ui" line="55"/>
@@ -49,12 +49,12 @@
     <message>
         <location filename="window.ui" line="68"/>
         <source>Keyboard Layouts</source>
-        <translation type="unfinished"/>
+        <translation>キーボード・レイアウト</translation>
     </message>
     <message>
         <location filename="window.ui" line="158"/>
         <source>Hotkeys</source>
-        <translation type="unfinished"/>
+        <translation>ホットキー</translation>
     </message>
     <message>
         <location filename="window.ui" line="181"/>
@@ -78,17 +78,18 @@
         <location filename="window.cpp" line="204"/>
         <location filename="window.cpp" line="241"/>
         <source>Failed to open file: </source>
-        <translation type="unfinished"/>
+        <translation>開くことが出来なかったファイル: </translation>
     </message>
     <message>
         <location filename="window.cpp" line="241"/>
         <source>Most settings will not be loaded</source>
-        <translation type="unfinished"/>
+        <translation>ほとんどの設定はロードされません
+</translation>
     </message>
     <message>
         <location filename="window.cpp" line="352"/>
         <source>Disabled</source>
-        <translation type="unfinished"/>
+        <translation>無効化</translation>
     </message>
 </context>
 </TS>

@@ -1,25 +1,25 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="ru">
 <context>
     <name>SelectLayoutDialog</name>
     <message>
         <location filename="selectlayoutdialog.ui" line="14"/>
         <source>Select Keyboard Layout and Variant</source>
-        <translation type="unfinished"/>
+        <translation>Выберите раскладку клавиатуры и вариант</translation>
     </message>
     <message>
         <location filename="selectlayoutdialog.ui" line="29"/>
         <source>Layout</source>
-        <translation type="unfinished"/>
+        <translation>Размещение</translation>
     </message>
     <message>
         <location filename="selectlayoutdialog.ui" line="47"/>
         <source>Variants</source>
-        <translation type="unfinished"/>
+        <translation>Варианты</translation>
     </message>
     <message>
         <location filename="selectlayoutdialog.cpp" line="57"/>
         <source>No Variant</source>
-        <translation type="unfinished"/>
+        <translation>Без варианта</translation>
     </message>
 </context>
 <context>
@@ -29,17 +29,17 @@
         <location filename="window.cpp" line="113"/>
         <location filename="window.cpp" line="117"/>
         <source>System Keyboard</source>
-        <translation type="unfinished"/>
+        <translation>Системная клавиатура</translation>
     </message>
     <message>
         <location filename="window.ui" line="28"/>
         <source>Layouts</source>
-        <translation type="unfinished"/>
+        <translation>Раскладки</translation>
     </message>
     <message>
         <location filename="window.ui" line="34"/>
         <source>Keyboard Model</source>
-        <translation type="unfinished"/>
+        <translation>Модель клавиатуры</translation>
     </message>
     <message>
         <location filename="window.ui" line="55"/>
@@ -49,12 +49,12 @@
     <message>
         <location filename="window.ui" line="68"/>
         <source>Keyboard Layouts</source>
-        <translation type="unfinished"/>
+        <translation>Раскладки клавиатуры</translation>
     </message>
     <message>
         <location filename="window.ui" line="158"/>
         <source>Hotkeys</source>
-        <translation type="unfinished"/>
+        <translation>Горячие клавиши</translation>
     </message>
     <message>
         <location filename="window.ui" line="181"/>
@@ -78,17 +78,17 @@
         <location filename="window.cpp" line="204"/>
         <location filename="window.cpp" line="241"/>
         <source>Failed to open file: </source>
-        <translation type="unfinished"/>
+        <translation>Не удалось открыть файл:</translation>
     </message>
     <message>
         <location filename="window.cpp" line="241"/>
         <source>Most settings will not be loaded</source>
-        <translation type="unfinished"/>
+        <translation>Большинство настроек не будут загружены</translation>
     </message>
     <message>
         <location filename="window.cpp" line="352"/>
         <source>Disabled</source>
-        <translation type="unfinished"/>
+        <translation>Отключено</translation>
     </message>
 </context>
 </TS>

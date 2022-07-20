@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="zh_CN" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="zh_CN">
 <context>
     <name>SelectLayoutDialog</name>
     <message>
@@ -78,7 +78,7 @@
         <location filename="window.cpp" line="204"/>
         <location filename="window.cpp" line="241"/>
         <source>Failed to open file: </source>
-        <translation>无法打开文件:</translation>
+        <translation>无法打开文件：</translation>
     </message>
     <message>
         <location filename="window.cpp" line="241"/>

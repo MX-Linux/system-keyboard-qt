@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="pt_BR" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="pt_BR">
 <context>
     <name>SelectLayoutDialog</name>
     <message>
@@ -54,7 +54,7 @@
     <message>
         <location filename="window.ui" line="158"/>
         <source>Hotkeys</source>
-        <translation>Teclas de atalho</translation>
+        <translation>Teclas de Atalho</translation>
     </message>
     <message>
         <location filename="window.ui" line="181"/>
@@ -78,7 +78,7 @@
         <location filename="window.cpp" line="204"/>
         <location filename="window.cpp" line="241"/>
         <source>Failed to open file: </source>
-        <translation>Falha ao abrir arquivo:</translation>
+        <translation>Falha ao abrir o arquivo:</translation>
     </message>
     <message>
         <location filename="window.cpp" line="241"/>

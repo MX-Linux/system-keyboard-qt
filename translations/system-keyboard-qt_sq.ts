@@ -1,15 +1,15 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="sq" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="sq">
 <context>
     <name>SelectLayoutDialog</name>
     <message>
         <location filename="selectlayoutdialog.ui" line="14"/>
         <source>Select Keyboard Layout and Variant</source>
-        <translation>Zgjidhni Paraqitjen dhe Variantin e Tastierës</translation>
+        <translation>Përzgjidhni Skemë dhe Variant Tastiere</translation>
     </message>
     <message>
         <location filename="selectlayoutdialog.ui" line="29"/>
         <source>Layout</source>
-        <translation>Paraqitja</translation>
+        <translation>Skemë</translation>
     </message>
     <message>
         <location filename="selectlayoutdialog.ui" line="47"/>
@@ -19,7 +19,7 @@
     <message>
         <location filename="selectlayoutdialog.cpp" line="57"/>
         <source>No Variant</source>
-        <translation>Asnjë Variant</translation>
+        <translation>Pa Variant</translation>
     </message>
 </context>
 <context>
@@ -29,17 +29,17 @@
         <location filename="window.cpp" line="113"/>
         <location filename="window.cpp" line="117"/>
         <source>System Keyboard</source>
-        <translation>Tastiera Sistemit</translation>
+        <translation>Tastierë Sistemi</translation>
     </message>
     <message>
         <location filename="window.ui" line="28"/>
         <source>Layouts</source>
-        <translation>Paraqitjet</translation>
+        <translation>Skema</translation>
     </message>
     <message>
         <location filename="window.ui" line="34"/>
         <source>Keyboard Model</source>
-        <translation>Modeli Tastieres</translation>
+        <translation>Model Tastiere</translation>
     </message>
     <message>
         <location filename="window.ui" line="55"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="window.ui" line="68"/>
         <source>Keyboard Layouts</source>
-        <translation>Paraqitja Tastierës</translation>
+        <translation>Skema Tastiere</translation>
     </message>
     <message>
         <location filename="window.ui" line="158"/>
@@ -59,7 +59,7 @@
     <message>
         <location filename="window.ui" line="181"/>
         <source>Advanced</source>
-        <translation>Përparuar</translation>
+        <translation>Të mëtejshme</translation>
     </message>
     <message>
         <location filename="window.ui" line="209"/>
@@ -78,17 +78,17 @@
         <location filename="window.cpp" line="204"/>
         <location filename="window.cpp" line="241"/>
         <source>Failed to open file: </source>
-        <translation>Dështoi hapja e skedarit:</translation>
+        <translation>S’u arrit të hapet kartelë:</translation>
     </message>
     <message>
         <location filename="window.cpp" line="241"/>
         <source>Most settings will not be loaded</source>
-        <translation>Shumica e cilësimeve nuk të ngarkohen</translation>
+        <translation>Shumica e rregullimeve s’do të ngarkohen</translation>
     </message>
     <message>
         <location filename="window.cpp" line="352"/>
         <source>Disabled</source>
-        <translation>Gjymtuar</translation>
+        <translation>Çaktivizuar</translation>
     </message>
 </context>
 </TS>
