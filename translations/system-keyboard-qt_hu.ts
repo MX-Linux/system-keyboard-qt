@@ -59,7 +59,7 @@
     <message>
         <location filename="window.ui" line="181"/>
         <source>Advanced</source>
-        <translation type="unfinished"/>
+        <translation>Fejlett</translation>
     </message>
     <message>
         <location filename="window.ui" line="209"/>
