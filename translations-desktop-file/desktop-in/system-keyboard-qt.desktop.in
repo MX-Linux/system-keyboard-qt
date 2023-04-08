@@ -4,7 +4,7 @@ Encoding=UTF-8
 Name=System Keyboard
 # # The desktop entry comment will be shown within the menu.
 Comment=Configure System Keyboard
-Exec=su-to-root -X -c system-keyboard-qt
+Exec=system-keyboard-qt-launcher
 Type=Application
 Icon=system-keyboard-qt
 Path=
