@@ -1,3 +1,9 @@
+system-keyboard-qt (23.04.04mx23) mx; urgency=medium
+
+  * use older method to set keyboard.  udevadm method crashes X
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Tue, 18 Apr 2023 19:41:04 -0400
+
 system-keyboard-qt (23.04.02) mx; urgency=medium
 
   * update launcher script
