@@ -1,4 +1,4 @@
-system-keyboard-qt (23.04.05) mx; urgency=medium
+system-keyboard-qt (23.04.05mx23) mx; urgency=medium
 
   * update policy file
   * go back to udevadm set method
