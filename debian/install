@@ -6,3 +6,4 @@ translations/*.qm 	 usr/share/system-keyboard-qt/locale
 help/*					usr/share/doc/system-keyboard-qt/help
 policy/* usr/share/polkit-1/actions
 script/* usr/bin
+lib/helper			usr/lib/system-keyboard-qt
