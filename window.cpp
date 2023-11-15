@@ -199,7 +199,7 @@ bool Window::apply()
     qDebug() << parser.source();
     {
         QFile io{KeyboardDefaultFile};
-        if(!io.open(QFile::WriteOnly))
+        if(io.open(QFile::WriteOnly))
         {
             qDebug() << "Failed to open file write-only:" << KeyboardDefaultFile;
             QMessageBox::critical(this, tr("Error"), tr("Failed to open file: ") + KeyboardDefaultFile, QMessageBox::Close);
@@ -207,6 +207,12 @@ bool Window::apply()
         }
 
         QTemporaryFile tempfile;
+        if(!tempfile.open()){
+            qDebug() << "Failed to open file write-only:" << tempfile.fileName();
+            QMessageBox::critical(this, tr("Error"), tr("Failed to open file: ") + tempfile.fileName(), QMessageBox::Close);
+            return false;
+        }
+
         QTextStream stream{&tempfile};
         stream << parser.source();
         tempfile.close();
