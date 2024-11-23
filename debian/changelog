@@ -1,4 +1,4 @@
-system-keyboard-qt (24.11.01mx24) mx; urgency=medium
+system-keyboard-qt (24.11.01) mx; urgency=medium
 
   * updtae help button function to work non-root when viewer isn't installed
   * update translations
