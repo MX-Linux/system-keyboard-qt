@@ -1,3 +1,9 @@
+system-keyboard-qt (25.04.02mx25) mx; urgency=medium
+
+  * make launch in center of screen
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Tue, 22 Apr 2025 19:02:36 -0400
+
 system-keyboard-qt (25.04.01mx25) mx; urgency=medium
 
   * qt6 build
