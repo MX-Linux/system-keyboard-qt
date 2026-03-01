@@ -59,6 +59,7 @@ set(RESOURCES
 
 qt6_add_executable(system-keyboard-qt ${SOURCES} ${HEADERS} ${FORMS} ${RESOURCES})
 
+target_include_directories(system-keyboard-qt PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(system-keyboard-qt PRIVATE Qt::Core Qt::Widgets)
 
 install(TARGETS system-keyboard-qt
