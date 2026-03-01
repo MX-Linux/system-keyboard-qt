@@ -36,7 +36,7 @@ void PosixConfigParser::parse()
 {
     config.clear();
     QStringList lines = m_input.split('\n');
-    for(auto line : lines)
+    for(const auto& line : lines)
     {
         if(line.indexOf('#') == 0) continue;
         int e = line.indexOf('=');

@@ -24,9 +24,14 @@ enum ComboBoxRoles
     OptionName = Qt::UserRole,
 };
 
-const QStringList hotkeyOptions = {"grp", "lv3", "Compose key"};
-const QStringList advancedOptions = {"grp_led", "caps", "terminate"};
-const QString KeyboardDefaultFile = "/etc/default/keyboard";
+inline const QStringList hotkeyOptions = {"grp", "lv3", "Compose key"};
+inline const QStringList advancedOptions = {"grp_led", "caps", "terminate"};
+
+#ifdef DISTRO_ARCH
+inline const QString KeyboardDefaultFile = "/etc/X11/xorg.conf.d/00-keyboard.conf";
+#else
+inline const QString KeyboardDefaultFile = "/etc/default/keyboard";
+#endif
 
 class KeyboardLayoutListWidgetItem : public QListWidgetItem
 {

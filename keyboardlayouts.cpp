@@ -19,7 +19,7 @@ void KeyboardInfo::reparse()
     m_optionGroups.clear();
     QStringList files = QDir(XkbDataDirectory).entryList({"base*.xml"});
     std::reverse(files.begin(), files.end());
-    for(auto file : files)
+    for(const auto& file : files)
     {
         QString filename = QDir::cleanPath(XkbDataDirectory + QDir::separator() + file);
         QFile io{filename};
