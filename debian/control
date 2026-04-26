@@ -2,8 +2,8 @@ Source: system-keyboard-qt
 Section: admin
 Priority: optional
 Maintainer: dolphinoracle <dolphinoracle@gmail.com>
-Build-Depends:  debhelper (>=10), qtbase5-dev, qttools5-dev-tools
-Standards-Version: 3.9.5
+Build-Depends:  debhelper-compat (= 12), qtbase5-dev, qttools5-dev-tools
+Standards-Version: 4.5.1
 Vcs-Git: git://github.com/mxlinux/system-keyboard-qt.git
 
 Package: system-keyboard-qt
