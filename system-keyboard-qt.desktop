@@ -224,4 +224,4 @@ Path=
 Terminal=false
 NoDisplay=false
 StartupNotify=false
-Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-HardwareSettings;MX-Setup;
+Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-HardwareSettings;X-MX-Setup;
