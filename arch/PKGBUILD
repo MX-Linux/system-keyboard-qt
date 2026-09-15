@@ -118,4 +118,8 @@ package() {
         install -Dm644 "$help_file" \
             "${pkgdir}/usr/share/doc/system-keyboard-qt/$(basename "$help_file")"
     done
+    # namcap flags a declared license= with nothing under
+    # /usr/share/licenses. The file is in the source; it was simply never
+    # installed.
+    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
