@@ -50,6 +50,26 @@ build() {
         -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 
     cmake --build build --parallel
+
+    # CMakeLists.txt has no translation handling at all - only the qmake .pro
+    # file lists TRANSLATIONS - so a CMake build produces no catalogues and the
+    # package shipped none. Generate them here, where package() looks for them.
+    # The binary is not called the same thing everywhere, so probe rather than
+    # assume, and fail if none is found - an empty locale directory is exactly
+    # the silent breakage this is fixing.
+    local lrelease="" cand
+    for cand in lrelease lrelease6 lrelease-qt6 /usr/lib/qt6/bin/lrelease; do
+        if command -v "$cand" >/dev/null 2>&1; then lrelease="$cand"; break; fi
+    done
+    if [ -z "$lrelease" ]; then
+        echo "no lrelease found; cannot build translations" >&2
+        return 1
+    fi
+
+    local ts
+    for ts in translations/*.ts; do
+        "$lrelease" "$ts" -qm "build/$(basename "${ts%.ts}").qm"
+    done
 }
 
 package() {
@@ -57,8 +77,11 @@ package() {
 
     install -Dm755 build/system-keyboard-qt "${pkgdir}/usr/bin/system-keyboard-qt"
 
-    install -dm755 "${pkgdir}/usr/share/system-keyboard-qt/locale"
-    install -Dm644 build/*.qm "${pkgdir}/usr/share/system-keyboard-qt/locale/" 2>/dev/null || true
+    # -t, and no error suppression: "install -D" with several sources and a
+    # directory argument is a usage error, and the "|| true" hid it, so the
+    # package built clean while /usr/share/system-keyboard-qt/locale - the
+    # directory main.cpp loads from - stayed empty.
+    install -Dm644 -t "${pkgdir}/usr/share/system-keyboard-qt/locale/" build/*.qm
 
     install -dm755 "${pkgdir}/usr/lib/system-keyboard-qt"
     install -Dm755 lib/helper "${pkgdir}/usr/lib/system-keyboard-qt/helper"
