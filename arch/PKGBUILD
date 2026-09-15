@@ -1,0 +1,90 @@
+# Maintainer: Adrian <adrian@mxlinux.org>
+
+# PKGBUILD for building on the Open Build Service.
+#
+# OBS build VMs have no network, so every source has to be present in the
+# package's OBS sources before the build starts. aur/PKGBUILD fetches a GitHub
+# release tarball in source= and therefore cannot be used here.
+#
+# This repository commits no source tarball either, so the OBS tar_scm service
+# packs the git checkout into one. That tarball has a constant name rather than
+# a versioned one, so bumping pkgver never requires editing the OBS service as
+# well.
+#
+# pkgver tracks the git tag / AUR version, NOT debian/changelog. The changelog
+# still says 24.11.01, which is far older than the 26.02arch published to AUR:
+# building from it would put an older package in the repository, and because a
+# repository package stops AUR helpers from updating it, users who already have
+# the AUR build would be stranded on a silent downgrade.
+
+pkgname=system-keyboard-qt
+pkgver=26.02arch
+pkgrel=1
+pkgdesc="Graphical frontend for configuring X11 keyboard layouts"
+arch=('x86_64' 'i686')
+url="https://github.com/MX-Linux/system-keyboard-qt"
+license=('GPL')
+depends=('qt6-base' 'xorg-setxkbmap' 'polkit' 'flags-common')
+makedepends=('cmake' 'ninja' 'qt6-tools')
+optdepends=('xdg-utils: help display')
+source=("${pkgname}-source.tar")
+sha256sums=('SKIP')
+
+# tar_scm unpacks to <repository>-<versionformat>; both are fixed here.
+_srcdir="${pkgname}-source"
+
+# CMakeLists.txt derives no version at all - project() carries no VERSION, no
+# dpkg-parsechangelog call, and nothing compiles a VERSION define - so there is
+# no -DPROJECT_VERSION_OVERRIDE to pass and nothing that could bake the stale
+# debian/changelog version into the binary.
+
+build() {
+    cd "${srcdir}/${_srcdir}"
+
+    rm -rf build
+
+    cmake -G Ninja \
+        -B build \
+        -DCMAKE_BUILD_TYPE=None \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+
+    cmake --build build --parallel
+}
+
+package() {
+    cd "${srcdir}/${_srcdir}"
+
+    install -Dm755 build/system-keyboard-qt "${pkgdir}/usr/bin/system-keyboard-qt"
+
+    install -dm755 "${pkgdir}/usr/share/system-keyboard-qt/locale"
+    install -Dm644 build/*.qm "${pkgdir}/usr/share/system-keyboard-qt/locale/" 2>/dev/null || true
+
+    install -dm755 "${pkgdir}/usr/lib/system-keyboard-qt"
+    install -Dm755 lib/helper "${pkgdir}/usr/lib/system-keyboard-qt/helper"
+
+    install -Dm644 policy/org.mxlinux.pkexec.system-keyboard-qt.policy \
+        "${pkgdir}/usr/share/polkit-1/actions/org.mxlinux.pkexec.system-keyboard-qt.policy"
+
+    install -Dm644 system-keyboard-qt.desktop "${pkgdir}/usr/share/applications/system-keyboard-qt.desktop"
+
+    install -Dm644 system-keyboard-qt.svg "${pkgdir}/usr/share/icons/hicolor/scalable/apps/system-keyboard-qt.svg"
+
+    install -dm755 "${pkgdir}/usr/share/doc/system-keyboard-qt"
+
+    # aur/PKGBUILD reaches for these through ${srcroot}, which makepkg never
+    # sets; the unpacked tree is the working directory here, so use it directly.
+    install -Dm644 help/*.1 "${pkgdir}/usr/share/man/man1/" 2>/dev/null || true
+    if [ -f debian/changelog ]; then
+        gzip -c debian/changelog > "${pkgdir}/usr/share/doc/system-keyboard-qt/changelog.gz"
+    fi
+    # "|| continue", not "&& install": help/*.png and help/*.css match nothing,
+    # so a trailing failed test would make package() return non-zero under the
+    # errexit makepkg wraps it in. aur/PKGBUILD only escapes that because its
+    # broken ${srcroot} guard skips the loop entirely.
+    for help_file in help/*.html help/*.jpg help/*.png help/*.css; do
+        [ -f "$help_file" ] || continue
+        install -Dm644 "$help_file" \
+            "${pkgdir}/usr/share/doc/system-keyboard-qt/$(basename "$help_file")"
+    done
+}
