@@ -97,10 +97,15 @@ package() {
 
     # aur/PKGBUILD reaches for these through ${srcroot}, which makepkg never
     # sets; the unpacked tree is the working directory here, so use it directly.
-    # -t is required: "install -D" treats its last argument as a file
-    # path even with one source, so this failed with "cannot create regular
-    # file '.../man1/': Not a directory" and the suppression hid it.
-    install -Dm644 -t "${pkgdir}/usr/share/man/man1/" help/*.1
+    # help/system-keyboard-qt.1 is not committed yet - it exists only in a
+    # working tree - so the checkout this builds from has no help/*.1 and an
+    # unconditional install fails the build. Guard on the file rather than
+    # suppressing install's errors, and use -t, since "install -D" treats its
+    # last argument as a file path even with a single source. Once the man page
+    # is committed this ships it with no further change.
+    if compgen -G "help/*.1" >/dev/null; then
+        install -Dm644 -t "${pkgdir}/usr/share/man/man1/" help/*.1
+    fi
     if [ -f debian/changelog ]; then
         gzip -c debian/changelog > "${pkgdir}/usr/share/doc/system-keyboard-qt/changelog.gz"
     fi
