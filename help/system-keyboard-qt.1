@@ -1,0 +1,26 @@
+.TH SYSTEM-KEYBOARD-QT 1 "2026-07-20" "MX Linux" "User Commands"
+.SH NAME
+system-keyboard-qt \- configure X11 keyboard layouts and options
+.SH SYNOPSIS
+.B system-keyboard-qt
+.SH DESCRIPTION
+.B system-keyboard-qt
+provides a graphical interface for configuring the system keyboard. The main page selects the hardware keyboard, reorders layouts and variants, and adds layouts or variants. The Hotkeys page configures the layout-switch key combination, third-level key, and Compose key.
+.PP
+The Advanced page configures X keyboard options including LED behavior, Caps Lock behavior, and the Kill X key combination. The selected system keyboard is stored in
+.I /etc/default/keyboard
+for use on future boots.
+.SH OPTIONS
+This application has no documented command-line options. The graphical interface provides all operations.
+.SH FILES
+.TP
+.I /etc/default/keyboard
+System keyboard configuration.
+.TP
+.I /usr/share/doc/system-keyboard-qt
+Installed HTML help, images, license, and changelog documentation.
+.SH SEE ALSO
+.BR setxkbmap (1),
+.BR keyboard (5)
+.SH AUTHOR
+MX Linux contributors.
