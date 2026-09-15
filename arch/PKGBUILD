@@ -19,7 +19,7 @@
 
 pkgname=system-keyboard-qt
 pkgver=26.02arch
-pkgrel=1
+pkgrel=2
 pkgdesc="Graphical frontend for configuring X11 keyboard layouts"
 arch=('x86_64' 'i686')
 url="https://github.com/MX-Linux/system-keyboard-qt"
